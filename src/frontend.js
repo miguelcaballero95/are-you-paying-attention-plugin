@@ -4,18 +4,26 @@ import "./frontend.scss";
 
 const divsToUpdate = document.querySelectorAll('.paying-attention-update-me');
 
+// Loop through each div and render the Quiz component
 divsToUpdate.forEach(function (div) {
     const data = JSON.parse(div.querySelector("pre").innerHTML);
     ReactDOM.render(<Quiz {...data} />, div);
     div.classList.remove('paying-attention-update-me');
 });
 
+/**
+ * Quiz component
+ * 
+ * @param {*} props 
+ * @returns 
+ */
 function Quiz(props) {
 
     const [isCorrect, setIsCorrect] = useState(undefined);
 
     const [isCorrectDelayed, setIsCorrectDelayed] = useState(undefined)
 
+    // Reset the isCorrect state after 2.6 seconds
     useEffect(() => {
         if (isCorrect === false) {
             setTimeout(() => setIsCorrect(undefined), 2600);
@@ -27,6 +35,11 @@ function Quiz(props) {
     }, [isCorrect])
 
 
+    /**
+     * Handle the answer
+     * 
+     * @param {*} index The index of the answer
+     */
     function handleAnswer(index) {
         if (index == props.correctAnswer) {
             setIsCorrect(true);
