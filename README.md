@@ -1,4 +1,4 @@
-# Word Filter WordPress Plugin
+# Are you paying attention WordPress Plugin
 See certification: [Click here](https://www.udemy.com/certificate/UC-f454229e-8cf5-4d7d-9437-961ab1546eb2/)
 
 A custom WordPress plugin named **Are You Paying Attention**, developed as part of a Udemy course on WordPress development. This plugin allows WordPress site owners to create interactive multiple-choice quizzes within their posts and pages, enabling readers to engage and test their comprehension. 
